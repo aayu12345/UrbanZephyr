@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recommendation for UrbanZephyr</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body style="background:black ; color:white">
+    <div class="container">
+        <h1 class="text-center">Assesment and Recomendations</h1>
+
+        <h3>UNDER (UHI EFFECT) AFFECTED AREAS</h3>
+        {% if PREDICTION %}
+        {% for i in PREDICTION %}
+            <p>{{i}}</p>
+        {% endfor %}
+        {% else %}
+            <p>No predictions available.</p>
+        {% endif %}
+        
+        <h3>REASON</h3>
+        {% if Reasons %}
+        {% for i in Reasons %}
+            <p>{{i}}</p>
+        {% endfor %}
+        {% else %}
+            <p>No reasons available.</p>
+        {% endif %}
+        
+        <h3>RECOMMENDATIONS </h3>
+        {% if Recommendations %}
+        {% for i in Recommendations %}
+            <p>{{i}}</p>
+        {% endfor %}
+        {% else %}
+            <p>No recommendations available.</p>
+        {% endif %}
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
